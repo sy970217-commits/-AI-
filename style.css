@@ -1,0 +1,229 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --text: #183153;
+  --muted: #53647d;
+  --eyebrow: #657da5;
+  --accent: #5576d8;
+  --accent-hover: #3f5fc0;
+  --card: rgba(255, 255, 255, 0.9);
+  --border: rgba(255, 255, 255, 0.9);
+  --shadow: rgba(42, 67, 112, 0.14);
+  --input-bg: #ffffff;
+  --input-border: #d5def0;
+  --page-bg: linear-gradient(135deg, #e7f3ff, #d9e7ff 55%, #eee5ff);
+  --focus: #a8baff;
+  --secondary-bg: #eef2fb;
+  --secondary-text: #3f5fc0;
+}
+
+html[data-theme="dark"] {
+  --text: #e8eefc;
+  --muted: #b7c3d9;
+  --eyebrow: #9bb0d4;
+  --accent: #7b93ea;
+  --accent-hover: #92a7f3;
+  --card: rgba(24, 31, 52, 0.92);
+  --border: rgba(120, 140, 190, 0.28);
+  --shadow: rgba(0, 0, 0, 0.35);
+  --input-bg: #1d2642;
+  --input-border: #3a4770;
+  --page-bg: linear-gradient(135deg, #12182a, #1a2240 55%, #241833);
+  --focus: #7b93ea;
+  --secondary-bg: #2a3558;
+  --secondary-text: #d7def8;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  font-family: Arial, "Noto Sans KR", sans-serif;
+  color: var(--text);
+  background: var(--page-bg);
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.greeting-card {
+  width: min(100%, 560px);
+  padding: 52px 36px;
+  text-align: center;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  box-shadow: 0 20px 55px var(--shadow);
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--eyebrow);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-align: left;
+}
+
+.theme-toggle {
+  margin: 0;
+  padding: 8px 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid var(--input-border);
+  border-radius: 999px;
+  color: var(--text);
+  background: var(--secondary-bg);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.theme-toggle:hover {
+  transform: none;
+  background: var(--secondary-bg);
+}
+
+.clock {
+  margin: 10px 0 18px;
+  color: var(--accent);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(32px, 7vw, 48px);
+}
+
+h2 {
+  margin: 12px 0 22px;
+  color: var(--accent);
+  font-size: clamp(20px, 4vw, 26px);
+}
+
+h3 {
+  margin: 0 0 12px;
+  font-size: 18px;
+}
+
+.message {
+  margin: 0;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--input-border);
+  border-radius: 14px;
+  color: var(--text);
+  background: var(--input-bg);
+  font-size: 16px;
+}
+
+input:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 4px;
+}
+
+.hello-form,
+.goal-form {
+  margin-top: 24px;
+  display: grid;
+  gap: 12px;
+}
+
+button {
+  margin-top: 0;
+  padding: 14px 28px;
+  border: 0;
+  border-radius: 999px;
+  color: white;
+  background: var(--accent);
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  background: var(--accent-hover);
+}
+
+button.secondary {
+  color: var(--secondary-text);
+  background: var(--secondary-bg);
+}
+
+.goal-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.response,
+.saved-goal {
+  min-height: 26px;
+  margin: 14px 0 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.goal-section,
+.learn-section {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--input-border);
+  text-align: left;
+}
+
+.learn-section ul {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.learn-section li + li {
+  margin-top: 8px;
+}
+
+@media (max-width: 480px) {
+  .greeting-card {
+    padding: 40px 22px;
+  }
+
+  .top-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .eyebrow {
+    text-align: center;
+  }
+}
