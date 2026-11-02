@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello VibeCoding</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="greeting-card">
+    <div class="top-bar">
+      <p class="eyebrow">WELCOME TO THE FIRST DAY</p>
+      <button id="themeToggle" type="button" class="theme-toggle" aria-label="다크모드 전환">
+        <span id="themeIcon" aria-hidden="true">🌙</span>
+        <span id="themeLabel">다크모드</span>
+      </button>
+    </div>
+    <p id="clock" class="clock" aria-live="off">⏰ --:--:--</p>
+    <h1>안녕하세요! 👋</h1>
+    <h2>Hello, VibeCoding!</h2>
+    <p class="message">
+      오늘부터 AI와 함께 나만의 웹페이지를 만들어 봐요.<br>
+      작은 시작이 멋진 아이디어로 이어질 거예요.
+    </p>
+    <form id="helloForm" class="hello-form">
+      <label for="nameInput">이름</label>
+      <input id="nameInput" type="text" name="name" placeholder="이름을 입력하세요" autocomplete="name" maxlength="40">
+      <button id="helloButton" type="submit">인사하기</button>
+    </form>
+    <p id="response" class="response" aria-live="polite"></p>
+    <section class="goal-section" aria-labelledby="goalHeading">
+      <h3 id="goalHeading">오늘의 목표</h3>
+      <form id="goalForm" class="goal-form">
+        <label for="goalInput">오늘 이루고 싶은 목표</label>
+        <input id="goalInput" type="text" name="goal" placeholder="예: 웹페이지에 시계 넣기" maxlength="120">
+        <div class="goal-actions">
+          <button type="submit">목표 저장</button>
+          <button id="clearGoalButton" type="button" class="secondary">지우기</button>
+        </div>
+      </form>
+      <p id="savedGoal" class="saved-goal" aria-live="polite"></p>
+    </section>
+    <section class="learn-section" aria-labelledby="learnHeading">
+      <h3 id="learnHeading">📚 HTML, CSS, JavaScript 학습 포인트</h3>
+      <ul>
+        <li><strong>HTML</strong> — <code>input</code>, <code>form</code>, <code>button</code>으로 사용자 입력을 받아요.</li>
+        <li><strong>CSS</strong> — <code>:root</code> 변수와 <code>data-theme</code>로 라이트/다크 테마를 바꿔요.</li>
+        <li><strong>JavaScript</strong> — <code>setInterval</code>로 시계를 갱신하고, <code>localStorage</code>로 목표를 저장해요.</li>
+      </ul>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
